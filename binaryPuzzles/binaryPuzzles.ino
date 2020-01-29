@@ -2,7 +2,7 @@ void setup() {
   
   Serial.begin(9600);
   // put your setup code here, to run once:
-
+  
 }
 
 void loop() {
@@ -63,44 +63,46 @@ void loop() {
   Serial.print("negate(500) should return -500:          ");
   Serial.println(negate(500));
 
-
 }
 
 //
 int shiftRight(int num, int n){
-  return num;
+  return num >> n;
 }
 
 int shiftLeft(int num, int n){
-  return num;
+  return num << n;
 }
 
 // Fix the following functions, using only the bitwise and Boolean operators
 int hasAOne(int num) {
-  return num;
+  return num && 1;
 }
 
 int hasAZero(int num) {
-  return num;
+  boolean c = ~num;
+  return c && 1;
 }
 
 int leastSigHasAOne(int num) {
-  return num;
+  return num & 1;
 }
 
 int isNegativeInt(int num) {
-  return num;
+  int a = num >> 15;
+  return a && 1;
 }
 
 int isNegativeLong(long num) {
-  return num;
+  long a = num >> 31;
+  return a && 1;
 }
 
 int isNegativeChar(char num) {
-  return num;
+  char a = num >> 7;
+  return a && 1;
 }
 
 int negate(int num) {
-  return num;
+  return ~num+1;
 }
-
